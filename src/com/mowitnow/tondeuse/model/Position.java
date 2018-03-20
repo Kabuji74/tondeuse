@@ -6,6 +6,9 @@ public class Position {
     private Direction orientation;
 
     public Position(int positionX, int positionY, Direction orientation) {
+        if (orientation == null) {
+            throw new IllegalArgumentException("orientation must not be null");
+        }
         this.positionX = positionX;
         this.positionY = positionY;
         this.orientation = orientation;

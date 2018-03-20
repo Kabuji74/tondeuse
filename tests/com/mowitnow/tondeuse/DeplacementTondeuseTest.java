@@ -38,4 +38,50 @@ public class DeplacementTondeuseTest {
         Assert.assertEquals("51E", finalPosition2);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void tondeuseParamMustNotBeNull() {
+        //Given
+        TondeusePilotePiloteServiceImpl pilote = new TondeusePilotePiloteServiceImpl();
+        Surface surface = new Surface(5, 5);
+
+        String deplacementTondeuse1 = "GAGAGAGAA";
+
+        //When
+        pilote.moveTondeuse(surface, null, deplacementTondeuse1);
+
+        //Then
+        //Exception should be thrown
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void surfaceParamMustNotBeNull() {
+        //Given
+        TondeusePilotePiloteServiceImpl pilote = new TondeusePilotePiloteServiceImpl();
+        Tondeuse tondeuse1 = new Tondeuse(new Position(1, 2, NORD));
+
+        String deplacementTondeuse1 = "GAGAGAGAA";
+
+        //When
+        pilote.moveTondeuse(null, tondeuse1, deplacementTondeuse1);
+
+        //Then
+        //Exception should be thrown
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void movesParamMustNotBeNull() {
+        //Given
+        TondeusePilotePiloteServiceImpl pilote = new TondeusePilotePiloteServiceImpl();
+        Surface surface = new Surface(5, 5);
+        Tondeuse tondeuse1 = new Tondeuse(new Position(1, 2, NORD));
+
+        //When
+        pilote.moveTondeuse(surface, tondeuse1, null);
+
+        //Then
+        //Exception should be thrown
+
+    }
 }

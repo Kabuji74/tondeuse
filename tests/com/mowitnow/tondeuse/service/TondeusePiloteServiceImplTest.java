@@ -25,12 +25,12 @@ public class TondeusePiloteServiceImplTest {
     }
 
     @Test
-    public void avancerTondeuseShouldSetTondeuseToItsNewLocation() {
+    public void moveForwardTondeuseShouldSetTondeuseToItsNewLocation() {
         //Given
 
 
         //When
-        pilote.avancerTondeuse(pelouse, tondeuse);
+        pilote.moveForwardTondeuse(pelouse, tondeuse);
 
         //Then
         Assert.assertEquals(NORD, tondeuse.getPosition().getOrientation());
@@ -40,13 +40,13 @@ public class TondeusePiloteServiceImplTest {
     }
 
     @Test
-    public void avancerTondeuseShouldDoNothingIfNextMoveGoTooFarNorth() {
+    public void moveForwardShouldDoNothingIfNextMoveGoTooFarNorth() {
         //Given
         tondeuse.getPosition().setPositionX(1);
         tondeuse.getPosition().setPositionY(5);
 
         //When
-        pilote.avancerTondeuse(pelouse, tondeuse);
+        pilote.moveForwardTondeuse(pelouse, tondeuse);
 
         //Then
         Assert.assertEquals(NORD, tondeuse.getPosition().getOrientation());
@@ -57,14 +57,14 @@ public class TondeusePiloteServiceImplTest {
 
 
     @Test
-    public void avancerTondeuseShouldDoNothingIfNextMoveGoTooFarSouth() {
+    public void moveForwardTondeuseShouldDoNothingIfNextMoveGoTooFarSouth() {
         //Given
         tondeuse.getPosition().setPositionX(2);
         tondeuse.getPosition().setPositionY(1);
         tondeuse.getPosition().setOrientation(SUD);
 
         //When
-        pilote.avancerTondeuse(pelouse, tondeuse);
+        pilote.moveForwardTondeuse(pelouse, tondeuse);
 
         //Then
         Assert.assertEquals(SUD, tondeuse.getPosition().getOrientation());
@@ -74,14 +74,14 @@ public class TondeusePiloteServiceImplTest {
     }
 
     @Test
-    public void avancerTondeuseShouldDoNothingIfNextMoveGoTooFarEast() {
+    public void moveForwardTondeuseShouldDoNothingIfNextMoveGoTooFarEast() {
         //Given
         tondeuse.getPosition().setPositionX(5);
         tondeuse.getPosition().setPositionY(3);
         tondeuse.getPosition().setOrientation(EST);
 
         //When
-        pilote.avancerTondeuse(pelouse, tondeuse);
+        pilote.moveForwardTondeuse(pelouse, tondeuse);
 
         //Then
         Assert.assertEquals(EST, tondeuse.getPosition().getOrientation());
@@ -91,14 +91,14 @@ public class TondeusePiloteServiceImplTest {
     }
 
     @Test
-    public void avancerTondeuseShouldDoNothingIfNextMoveGoTooFarWest() {
+    public void moveForwardTondeuseShouldDoNothingIfNextMoveGoTooFarWest() {
         //Given
         tondeuse.getPosition().setPositionX(1);
         tondeuse.getPosition().setPositionY(3);
         tondeuse.getPosition().setOrientation(OUEST);
 
         //When
-        pilote.avancerTondeuse(pelouse, tondeuse);
+        pilote.moveForwardTondeuse(pelouse, tondeuse);
 
         //Then
         Assert.assertEquals(OUEST, tondeuse.getPosition().getOrientation());
@@ -112,8 +112,8 @@ public class TondeusePiloteServiceImplTest {
         //Given
 
         //When
-        pilote.changerOrientationTondeuse(pelouse, tondeuse, DROITE);
-        pilote.changerOrientationTondeuse(pelouse, tondeuse, DROITE);
+        pilote.rotateTondeuse(pelouse, tondeuse, DROITE);
+        pilote.rotateTondeuse(pelouse, tondeuse, DROITE);
 
         //Then
         Assert.assertEquals(SUD, tondeuse.getPosition().getOrientation());
@@ -127,10 +127,10 @@ public class TondeusePiloteServiceImplTest {
         //Given
 
         //When
-        pilote.changerOrientationTondeuse(pelouse, tondeuse, DROITE);
-        pilote.changerOrientationTondeuse(pelouse, tondeuse, DROITE);
-        pilote.changerOrientationTondeuse(pelouse, tondeuse, DROITE);
-        pilote.changerOrientationTondeuse(pelouse, tondeuse, DROITE);
+        pilote.rotateTondeuse(pelouse, tondeuse, DROITE);
+        pilote.rotateTondeuse(pelouse, tondeuse, DROITE);
+        pilote.rotateTondeuse(pelouse, tondeuse, DROITE);
+        pilote.rotateTondeuse(pelouse, tondeuse, DROITE);
 
         //Then
         Assert.assertEquals(NORD, tondeuse.getPosition().getOrientation());
@@ -144,7 +144,7 @@ public class TondeusePiloteServiceImplTest {
         //Given
 
         //When
-        pilote.changerOrientationTondeuse(pelouse, tondeuse, GAUCHE);
+        pilote.rotateTondeuse(pelouse, tondeuse, GAUCHE);
 
         //Then
         Assert.assertEquals(OUEST, tondeuse.getPosition().getOrientation());
