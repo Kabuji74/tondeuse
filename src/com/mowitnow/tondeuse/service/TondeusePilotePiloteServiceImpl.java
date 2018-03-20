@@ -7,7 +7,7 @@ import com.mowitnow.tondeuse.model.Tondeuse;
 
 import static com.mowitnow.tondeuse.model.Move.*;
 
-public class TondeusePiloteServiceImpl implements TondeuseService {
+public class TondeusePilotePiloteServiceImpl implements TondeusePiloteService {
 
     public Position moveTondeuse(Surface surface, Tondeuse tondeuse, String moves) {
         //TODO:Test null

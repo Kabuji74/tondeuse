@@ -14,7 +14,7 @@ import static com.mowitnow.tondeuse.model.Move.GAUCHE;
 public class TondeusePiloteServiceImplTest {
 
     private Tondeuse tondeuse = givenTondeuse();
-    private TondeusePiloteServiceImpl pilote = givenTondeusePilote();
+    private TondeusePilotePiloteServiceImpl pilote = givenTondeusePilote();
     private Surface pelouse = givenPelouseSurface();
 
     @Before
@@ -157,8 +157,8 @@ public class TondeusePiloteServiceImplTest {
         return new Surface(5, 5);
     }
 
-    private TondeusePiloteServiceImpl givenTondeusePilote() {
-        return new TondeusePiloteServiceImpl();
+    private TondeusePilotePiloteServiceImpl givenTondeusePilote() {
+        return new TondeusePilotePiloteServiceImpl();
     }
 
     private Tondeuse givenTondeuse() {

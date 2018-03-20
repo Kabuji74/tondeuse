@@ -3,7 +3,7 @@ package com.mowitnow.tondeuse;
 import com.mowitnow.tondeuse.model.Position;
 import com.mowitnow.tondeuse.model.Surface;
 import com.mowitnow.tondeuse.model.Tondeuse;
-import com.mowitnow.tondeuse.service.TondeusePiloteServiceImpl;
+import com.mowitnow.tondeuse.service.TondeusePilotePiloteServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +14,7 @@ public class DeplacementTondeuseTest {
     @Test
     public void theTwoTondeusesShouldGoToParameterizedDestination() {
         //Given
-        TondeusePiloteServiceImpl pilote = new TondeusePiloteServiceImpl();
+        TondeusePilotePiloteServiceImpl pilote = new TondeusePilotePiloteServiceImpl();
         Surface surface = new Surface(5, 5);
         Tondeuse tondeuse1 = new Tondeuse(new Position(1, 2, NORD));
         Tondeuse tondeuse2 = new Tondeuse(new Position(3, 3, EST));
